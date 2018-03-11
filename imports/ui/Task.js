@@ -12,8 +12,8 @@ export default class Task extends Component{
         console.log("map",data);
         data=data||[]
 
-        return data.map((task, key) => {
-            return <li>{task.name}{task.f_count}{task.created_at}{task.friends_count}</li>
+        return data.map((task, key1) => {
+            return <li key={key1}>{task.name}{task.f_count}{task.created_at}{task.friends_count}</li>
         })
 
     }
@@ -23,6 +23,7 @@ export default class Task extends Component{
 
         return(
             <div>
+                <p>Name Followers_count created_at  friends_count</p>
                 <ul>{this.getdata(this.props.data)}</ul>
             </div>
         )
