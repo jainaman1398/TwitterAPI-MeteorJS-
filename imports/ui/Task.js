@@ -13,7 +13,14 @@ export default class Task extends Component{
         data=data||[]
 
         return data.map((task, key1) => {
-            return <li key={key1}>{task.name}{task.f_count}{task.created_at}{task.friends_count}</li>
+            return(
+                <tr>
+                    <th>{task.name}</th>
+                    <th>{task.f_count}</th>
+                    <th>{task.created_at}</th>
+                    <th>{task.friends_count}</th>
+                </tr>
+            )
         })
 
     }
@@ -22,10 +29,15 @@ export default class Task extends Component{
 
 
         return(
-            <div>
-                <p>Name Followers_count created_at  friends_count</p>
-                <ul>{this.getdata(this.props.data)}</ul>
-            </div>
+            <table className="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Followers_count</th>
+                    <th>created_at</th>
+                    <th>friends_count</th>
+                </tr>
+                {this.getdata(this.props.data)}
+            </table>
         )
     }
 

@@ -26,7 +26,7 @@ export default class App extends Component{
                  console.log(res);
                  if(res==undefined)
                  {
-                     Meteor.call("followers.find",name,(err,res)=>{
+                     Meteor.call("followers1.find",name,(err,res)=>{
                              if(err)
                                  throw err;
                              else
